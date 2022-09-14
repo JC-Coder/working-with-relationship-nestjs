@@ -1,5 +1,5 @@
 import { IsNotEmpty } from "class-validator";
-import { Cart } from "src/cart/entities/cart.entity";
+import { Cart } from "src/products/entities/cart.entity";
 import { User } from "src/user/entities/user.entity";
 import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
@@ -18,7 +18,7 @@ export class Product {
     @Column()
     price: number;
 
-    @ManyToOne(() => User, user => user.products)
+    @ManyToOne(() => User, user => user.products, {onDelete: 'CASCADE'})
     user: User;
 
     @ManyToOne(() => Cart, cart => cart.products)

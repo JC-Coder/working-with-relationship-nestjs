@@ -12,7 +12,9 @@ export class ProductsService {
 
     // create new product logic 
     async createProd(item: ProductDto): Promise<any>{
+        // firstly we find the user to be assigned a product to 
         const user = await this.userRepository.findOneBy({id: item.userId})
+
         const product = this.productRepository.create(item)
         product.user = user;
         
@@ -27,6 +29,8 @@ export class ProductsService {
     // get all products logic 
 
 
-    // delete product via id logic 
+    // delete product via id logic  
+
+    // get  a user products via id 
 
 }

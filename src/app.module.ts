@@ -5,7 +5,7 @@ import { UserModule } from './user/user.module';
 import { ProductsModule } from './products/products.module';
 import { User } from './user/entities/user.entity';
 import { Product } from './products/entities/product.entity';
-import { Cart } from './cart/entities/cart.entity';
+import { Cart } from './products/entities/cart.entity';
 
 @Module({
   imports: [

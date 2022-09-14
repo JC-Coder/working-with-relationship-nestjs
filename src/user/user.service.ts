@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { DeleteResult, Repository } from 'typeorm';
 import { UserDto } from './dto/user.dto';
 import { User } from './entities/user.entity';
 
@@ -21,6 +21,12 @@ export class UserService {
     // get all users logic 
 
     
-    // delete users logic 
+    // delete user via id  logic 
+    async deleteUser(id: number): Promise<DeleteResult>{
+        return await this.userRepository.delete(id);
+    }
+
+
+    // add products to cart logic 
 
 }

@@ -20,4 +20,6 @@ export class ProductsController {
 
 
     // delete product via id 
+
+    // get  a user products via id 
 }

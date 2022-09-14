@@ -1,5 +1,5 @@
 import { IsNotEmpty } from "class-validator";
-import { Cart } from "src/cart/entities/cart.entity";
+import { Cart } from "src/products/entities/cart.entity";
 import { Product } from "src/products/entities/product.entity";
 import { Column, Entity, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
