@@ -1,5 +1,7 @@
 import { IsNotEmpty } from "class-validator";
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Cart } from "src/cart/entities/cart.entity";
+import { Product } from "src/products/entities/product.entity";
+import { Column, Entity, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class User {
@@ -11,4 +13,10 @@ export class User {
 
     @Column()
     email: string;
+
+    @OneToMany(() => Product, product => product.user)
+    products: Product[];
+
+    @OneToOne(() => Cart, cart => cart.user)
+    cart: Cart;
 }

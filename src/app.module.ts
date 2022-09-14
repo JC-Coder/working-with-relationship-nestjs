@@ -5,6 +5,7 @@ import { UserModule } from './user/user.module';
 import { ProductsModule } from './products/products.module';
 import { User } from './user/entities/user.entity';
 import { Product } from './products/entities/product.entity';
+import { Cart } from './cart/entities/cart.entity';
 
 @Module({
   imports: [
@@ -15,9 +16,9 @@ import { Product } from './products/entities/product.entity';
       username: 'root',
       password: '',
       database: 'relationship_db',
-      entities: [User, Product],
+      entities: [User, Product, Cart],
       synchronize: true,
-      dropSchema: true,
+      dropSchema: false,
     }),
     UserModule,
     ProductsModule,
